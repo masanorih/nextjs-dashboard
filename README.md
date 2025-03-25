@@ -4,6 +4,7 @@ This is the starter template for the Next.js App Router Course. It contains the 
 
 For more information, see the [course curriculum](https://nextjs.org/learn) on the Next.js Website.
 
+<pre>
 MEMO:
 - pnpm devで開発 serverを起動することが出来る
   pnpm は npm で install
@@ -33,3 +34,4 @@ MEMO:
 
 - a tag で link すると完全な再読み込みが実行されるので、Link component を使う
   Link component は prod環境では prefetch を行う模様
+</pre>
