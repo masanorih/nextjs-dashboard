@@ -23,7 +23,7 @@ MEMO:
   と import 出来る
 
 - Tailwind を利用して className に css プロパティを記述することが出来る
-  <main className="flex min-h-screen flex-col p-6">
+  `<main className="flex min-h-screen flex-col p-6">`
 
 - app/hogehoge/page.tsx を生やすことで /hogehoge でアクセス可能なページを
   追加していくことが出来る
@@ -34,4 +34,7 @@ MEMO:
 
 - a tag で link すると完全な再読み込みが実行されるので、Link component を使う
   Link component は prod環境では prefetch を行う模様
+
+- postgres module の sql() は Promise を返すので `await Promise.all(q1, q2, ...)` で
+  パラレルにクエリ発行が可能
 </pre>
