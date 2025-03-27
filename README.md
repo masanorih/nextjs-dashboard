@@ -23,7 +23,7 @@ MEMO:
   と import 出来る
 
 - Tailwind を利用して className に css プロパティを記述することが出来る
-  `<main className="flex min-h-screen flex-col p-6">`
+  <main className="flex min-h-screen flex-col p-6">
 
 - app/hogehoge/page.tsx を生やすことで /hogehoge でアクセス可能なページを
   追加していくことが出来る
@@ -43,4 +43,14 @@ MEMO:
 
 - app/dashboard/ 配下に url に対応するページを配置して、
   app/ui/dashboard/ 配下に内容物(コンポーネント)を配置していく
+
+- 部分的なプリレンダリングを行う Partial Prerendering は
+  next.config.ts で
+  experimental: {
+    ppr: 'incremental'
+  }
+  して
+  layout.tsx で
+  export const experimental_ppr = true;
+  すればいいだけなので簡単。Next.js 14 で投入された新機能な点に注意が必要
 </pre>
