@@ -37,4 +37,10 @@ MEMO:
 
 - postgres module の sql() は Promise を返すので `await Promise.all(q1, q2, ...)` で
   パラレルにクエリ発行が可能
+
+- app/dashboard/(hogehoge)/ とカッコでディレクトリを作ると特別？と見なされる
+  app/dashboard/ に置いたものとみなされる？
+
+- app/dashboard/ 配下に url に対応するページを配置して、
+  app/ui/dashboard/ 配下に内容物(コンポーネント)を配置していく
 </pre>
