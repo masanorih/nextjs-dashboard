@@ -71,4 +71,12 @@ MEMO:
   layout.tsx で
   export const experimental_ppr = true;
   すればいいだけなので簡単。Next.js 14 で投入された新機能な点に注意が必要
+
+- onchange event での検索実行などは backend 負荷が大きいため、
+  import { useDebouncedCallback } from 'use-debounce';
+  const handleSearch = useDebouncedCallback((term) => {
+    ...
+  }, 300);
+  と useDebouncedCallback で call する関数を定義すると、指定の時間間隔(300ms?)
+  連続して関数が呼ばれないようにしてくれる。
 </pre>
