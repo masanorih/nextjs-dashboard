@@ -1,16 +1,34 @@
 ## Next.js App Router Course - Starter
 
+https://nextjs.org/learn が途中で github への登録を求めてくるので作成したチュートリアル。
+
 This is the starter template for the Next.js App Router Course. It contains the starting code for the dashboard application.
 
 For more information, see the [course curriculum](https://nextjs.org/learn) on the Next.js Website.
 
 <pre>
 MEMO:
-- pnpm devで開発 serverを起動することが出来る
-  pnpm は npm で install
-  % sudo npm install -g pnpm
+- Ubuntu 24.04.2 LTS on WSL2 での環境構築手順
   npm は apt で install
   % sudo apt install npm
+
+  pnpm は npm で install
+  % sudo npm install -g pnpm
+
+  開発環境を起動する
+  % pnpm run dev
+
+- 他環境で新たに git clone して開発する場合の注意点
+
+  chapter10. でカナリヤ版を入れたので他環境で開発環境を立ち上げるには以下が必要かも
+  % pnpm install next@canary
+  現状
+      "next": "15.3.0-canary.24",
+  が入る
+
+  vercel の postgresql の .env がリポジトリにはないので
+  https://nextjs.org/learn/dashboard-app/setting-up-your-database
+  の手順で local に作成する必要がある
 
 - /app/layout.tsx に css import を書くと、global に css を設定可能
   import '@/app/ui/global.css';
