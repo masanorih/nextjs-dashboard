@@ -79,4 +79,24 @@ MEMO:
   }, 300);
   と useDebouncedCallback で call する関数を定義すると、指定の時間間隔(300ms?)
   連続して関数が呼ばれないようにしてくれる。
+
+- app/lib/definitions.ts に input 用の定義がある。
+  string, number, 'man' | 'woman' などが使える
+  validation library は Zod で行っている
+
+- amount type は coerce によって validate 時に number に変換されている
+
+- 更新後に `revalidatePath('/dashboard/invoices');` することで
+  /dashboard/invoices が最新の情報を fetch することが可能
+  さらに `redirect('/dashboard/invoices');` でリダイレクトも可能
+
+- url parameter はディレクトリで表現するらしく、`invoices/[id]/edit/page.tsx`
+  と [foo] でディレクトリを作成する
+
+- app/ui/invoices/table.tsx        - UpdateInvoice component
+  app/ui/invoices/buttons.tsx      - /dashboard/invoices/${id}/edit link href
+  app/dashboard/[id]/edit/page.tsx - Form component
+  app/ui/invoices/edit-form.tsx    - EditInvoiceForm()
+  app/lib/actions.ts               - updateInvoice()
+  という遷移で画面が表示、更新される
 </pre>
