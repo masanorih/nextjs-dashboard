@@ -93,10 +93,26 @@ MEMO:
 - url parameter はディレクトリで表現するらしく、`invoices/[id]/edit/page.tsx`
   と [foo] でディレクトリを作成する
 
+- invoices.id は uuidv4 なので url に uuid が入る
+
 - app/ui/invoices/table.tsx        - UpdateInvoice component
   app/ui/invoices/buttons.tsx      - /dashboard/invoices/${id}/edit link href
   app/dashboard/[id]/edit/page.tsx - Form component
   app/ui/invoices/edit-form.tsx    - EditInvoiceForm()
   app/lib/actions.ts               - updateInvoice()
   という遷移で画面が表示、更新される
+
+- DB fetch 系の関数は大体 `app/lib/data.ts` に定義されており、こいつがモデル層っぽい
+  ふるまいをするようになっているが、一部直接 sql 書かれたりもしている(action.ts 等)
+
+- http://localhost:3000/dashboard/invoices/2e94d1ed-d220-449f-9f11-f0bbceed9645/edit
+  のような存在しないid の url へアクセスすると、
+  1. dashboard/invoices/error.tsx を表示する
+  2. page.tsx で notFound() を call していれば、edit/not-found.tsx を表示する。
+
+- package.json に script: { "lint": "next lint" } を追加して pnpm lint を
+  実行すると静的解析してくれる
+
+- chapter15 で `% pnpm i next-auth@beta` して NextAuth.js を追加
+  `openssl rand -base64 32` して結果を .env に貼り付け
 </pre>
