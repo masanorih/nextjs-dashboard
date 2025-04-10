@@ -115,4 +115,15 @@ MEMO:
 
 - chapter15 で `% pnpm i next-auth@beta` して NextAuth.js を追加
   `openssl rand -base64 32` して結果を .env に貼り付け
+
+- どの layout.js, page.js に対しても metadata object を定義することにより
+  meta 要素を head に付与することが出来る
+  app/layout.js に書いた metadata が一番強く、その下の page.js に書くと、
+  部分的に override 出来る。
+
+  app/layout.js を title: {template: '%s | bar', default:'foo'} とし、
+  hogehoge/page.js で title:{ 'hogehoge' } とすると %s に hogehoge を代入することが出来る
+
+- tutorial 的な要素として mv するんだけど、
+  favicon.ico, opengraph-image.png は /public ではなく /app に配置するのが正解？
 </pre>
